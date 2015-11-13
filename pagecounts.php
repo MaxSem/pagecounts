@@ -45,7 +45,7 @@ function getCounts( $wiki ) {
 
 $stats = [];
 foreach ( $allWikis as $wiki ) {
-    if ( isset( $privateWikis[$wiki] ) ) {
+    if ( isset( $privateWikis[$wiki] ) || $wiki == 'labswiki' ) {
         continue;
     }
     $stats[$wiki] = getCounts( $wiki );
