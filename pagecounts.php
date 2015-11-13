@@ -43,4 +43,12 @@ function getCounts( $wiki ) {
     ];
 }
 
-var_dump(getCounts('enwiki'));
+$stats = [];
+foreach ( $allWikis as $wiki ) {
+    if ( isset( $privateWikis[$wiki] ) ) {
+        continue;
+    }
+    $stats[$wiki] = getCounts( $wiki );
+}
+
+echo json_encode( $stats );
