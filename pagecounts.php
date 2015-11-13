@@ -38,8 +38,8 @@ function getCounts( $wiki ) {
     $db->close();
 
     return [
-        'pages' => $row->ss_total_pages,
-		'contentPages' => $row->ss_good_articles
+        'pages' => intval( $row->ss_total_pages ),
+		'contentPages' => intval( $row->ss_good_articles ),
     ];
 }
 
