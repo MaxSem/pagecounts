@@ -32,7 +32,7 @@ function getCounts( $wiki ) {
     global $user, $password;
 
     $db = new mysqli( "$wiki.labsdb", $user, $password, "{$wiki}_p" );
-    $sql = 'SELECT ss_total_pages, ss_good_articles FROM site_stats LIMIT 1';
+    $sql = 'SELECT SUM(ss_total_pages) AS ss_total_pages, SUM(ss_good_articles) as ss_good_articles FROM site_stats';
     $res = $db->query( $sql );
     $row = $res->fetch_object();
     $db->close();
