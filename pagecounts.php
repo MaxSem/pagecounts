@@ -39,7 +39,7 @@ function getCounts( $wiki ) {
 
     return [
         'pages' => intval( $row->ss_total_pages ),
-		'contentPages' => intval( $row->ss_good_articles ),
+        'contentPages' => intval( $row->ss_good_articles ),
     ];
 }
 
